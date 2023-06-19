@@ -1,6 +1,6 @@
 from manipula_dados import tabelas_lista_1,nomes_colunas
 import MySQLdb
-conn = MySQLdb.connect(user='root', passwd='Gze6dg30!', host='127.0.0.1', port=3306)
+conn = MySQLdb.connect(user='root', passwd='<senha>', host='127.0.0.1', port='<port>')
 cursor = conn.cursor()
 
 
@@ -40,7 +40,7 @@ for tabela in tabelas_schema:
     UNION ALL
     SELECT {nome_unquoted}
     FROM {tabela}
-    INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/{tabela}.csv'
+    INTO OUTFILE '<caminho>/{tabela}.csv'
     CHARACTER SET utf8
     FIELDS TERMINATED BY ';'
     optionally ENCLOSED BY '"'

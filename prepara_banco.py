@@ -1,6 +1,6 @@
 import MySQLdb
 
-conn = MySQLdb.connect(user='root', passwd='Gze6dg30!', host='127.0.0.1', port=3306)
+conn = MySQLdb.connect(user='root', passwd='<senha>', host='127.0.0.1', port='<port>')
 cursor = conn.cursor()
 
 # tb_incremental

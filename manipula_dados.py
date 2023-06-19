@@ -245,7 +245,7 @@ tabelas_lista_2 = ['tb_updown_incremental',
                    'tb_desvios',
                    'tb_alertas_incremental']
 
-# planilha = pd.read_excel("C:/Users/rodun/Documents/Anvisa_PC/Flora_python/Evolutiva/pre_banco/teste.xlsx", sheet_name="modelo_banco1")
+# planilha = pd.read_excel("pre_banco/teste.xlsx", sheet_name="modelo_banco1")
 # planilha = planilha.loc[planilha['indice'] != 'branco']
 
 
@@ -282,8 +282,8 @@ def cria_os_dataframes(tabelas_lista):
 if __name__ == '__main__':
 
 #Abre os arquivos
-    os.chdir("C:/Users/rodun/Documents/Anvisa_PC/Flora_python/Evolutiva/5. Pre banco")
-    total_de_arquivos = len(os.listdir("C:/Users/rodun/Documents/Anvisa_PC/Flora_python/Evolutiva/5. Pre banco"))
+    os.chdir("5. Pre banco")
+    total_de_arquivos = len(os.listdir("5. Pre banco"))
     i = 1
     for arquivo in os.listdir():
         tabelas_salvas = {}
@@ -317,8 +317,8 @@ if __name__ == '__main__':
             tb_incremental[dataframe].to_sql(name=dataframe, con=my_conn, schema='flora', if_exists='append')
             tabelas_salvas[dataframe] = tb_incremental[dataframe].iloc[0, 0]
             print(f'Dados persistidos: {dataframe}.')
-        caminhoCompleto_antigo = (f"C:/Users/rodun/Documents/Anvisa_PC/Flora_python/Evolutiva/5. Pre banco/{arquivo}")
-        caminhoCompleto_novo = (f"C:/Users/rodun/Documents/Anvisa_PC/Flora_python/Evolutiva/6. Concluidos/{arquivo}")
+        caminhoCompleto_antigo = (f"5. Pre banco/{arquivo}")
+        caminhoCompleto_novo = (f"6. Concluidos/{arquivo}")
         shutil.move(caminhoCompleto_antigo, caminhoCompleto_novo)
         print('Arquivo movido para pasta de Concluídos')
         i += 1
